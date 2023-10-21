@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'core',
     'accounts',
     'blog',
+    'contact',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',

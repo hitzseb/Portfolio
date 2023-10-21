@@ -18,6 +18,3 @@ def portfolio(request):
             ],
     }
     return render(request, 'portfolio.html', {'profile': profile})
-
-def contact(request):
-    return render(request, 'contact.html', {'email': 'hitzseb@gmail.com'})

@@ -7,18 +7,24 @@
 {% block head_title %}{% trans "Confirm Access" %}{% endblock head_title %}
 
 {% block content %}
+<div class="container my-5 py-5">
+  <div class="row">
+    <div class="col col-xxl-4 col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto">
 
-<h2>{% trans "Confirm Access" %}</h2>
+      <h2>{% trans "Confirm Access" %}</h2>
 
-<p>{% blocktranslate %}To safeguard the security of your account, please enter your password:{% endblocktranslate %}</p>
+      <p>{% blocktranslate %}To safeguard the security of your account, please enter your password:{% endblocktranslate
+        %}</p>
 
-<form class="reauthenticate" method="POST" action="{% url 'account_reauthenticate' %}">
-  {% csrf_token %}
-  {{ form|crispy }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button class="btn" type="submit">{% trans "Confirm" %}</button>
-</form>
-
+      <form class="reauthenticate" method="POST" action="{% url 'account_reauthenticate' %}">
+        {% csrf_token %}
+        {{ form|crispy }}
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <button class="btn" type="submit">{% trans "Confirm" %}</button>
+      </form>
+    </div>
+  </div>
+</div>
 {% endblock content %}
