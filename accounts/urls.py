@@ -1,8 +1,7 @@
 from django.urls import include, path
-from .views import profile_view, profile_edit
+from .views import profile
 
 urlpatterns = [
     path('', include('allauth.urls')),
-    path('profile/', profile_view, name='profile_view'),
-    path('profile/edit/', profile_edit, name='profile_edit'),
+    path('profile/', profile, name='profile'),
 ]
